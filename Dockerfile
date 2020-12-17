@@ -11,7 +11,7 @@ RUN pip install -r /requirements.txt
 RUN apk del .tmp-build-deps
 RUN mkdir /fitness_planner
 WORKDIR /fitness_planner
-COPY ../fitness_planner /fitness_planner
+COPY ./fitness_planner /fitness_planner
 
 RUN adduser -D user
 USER user
