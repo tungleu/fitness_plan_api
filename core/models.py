@@ -35,11 +35,27 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
 
+
 class Exercise(models.Model):
     name = models.CharField(max_length=255)
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
+
     def __str__(self):
         return self.name
+
+
+class Plan(models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    title = models.CharField(max_length=255)
+    description = models.TextField(max_length=255)
+    link = models.CharField(max_length=255, blank=True)
+    exercises = models.ManyToManyField('Exercise')
+
+    def __str__(self):
+        return self.title

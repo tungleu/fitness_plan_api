@@ -5,6 +5,7 @@ from plan import views
 
 router = DefaultRouter()
 router.register('exercises', views.ExerciseViewSet)
+router.register('plans', views.PlanViewSet)
 
 app_name = 'plan'
 
