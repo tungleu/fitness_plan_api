@@ -6,7 +6,7 @@ from core.models import Exercise, Plan
 class ExerciseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'image')
         read_only_fields = ('id',)
 
 
@@ -24,3 +24,10 @@ class PlanSerializer(serializers.ModelSerializer):
 
 class PlanDetailSerialzer(PlanSerializer):
     exercises = ExerciseSerializer(many=True, read_only=True)
+
+class ExerciseImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Exercise
+        fields = ('id', 'image')
+        read_only_fields = ('id',)
+
