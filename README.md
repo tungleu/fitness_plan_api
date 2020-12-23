@@ -1,2 +1,2 @@
 # fitness_planner
-Vue project
+Fitness Planner API using DjangoRestFramwork
