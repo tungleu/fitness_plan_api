@@ -1,2 +1,2 @@
-# fitness_planner
-Fitness Planner API using DjangoRestFramwork
+# fitness_plan
+Fitness Plan API using DjangoRestFramwork
